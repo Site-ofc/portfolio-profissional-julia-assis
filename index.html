@@ -308,18 +308,8 @@
 
   /* ============ RESPONSIVE ============ */
   @media (min-width:1025px){
-    .hero{background:#17231d;}
+    .hero{background:#17231d url('images/cover-desktop.webp') center / cover no-repeat;}
     .hero .wrap{width:100%;}
-    .hero::before{
-      content:"";position:absolute;inset:-60px;z-index:0;
-      background:url('images/portrait-mobile.webp') center / cover no-repeat;
-      filter:blur(42px) brightness(.55);
-    }
-    .hero::after{
-      content:"";position:absolute;inset:0;z-index:0;
-      background:url('images/portrait-mobile.webp') center / contain no-repeat;
-    }
-    .hero-inner{z-index:1;}
     .hero-contact{left:auto;right:24px;bottom:56px;}
     .hero-contact .btn-solid{min-width:210px;font-size:13px;}
   }
