@@ -117,7 +117,6 @@
     background:#17231d url('images/portrait-mobile.webp') center 12% / cover no-repeat;
   }
   .hero-inner{position:relative;min-height:100svh;}
-  .hero-desktop{display:none;}
   .hero-contact{
     position:absolute;
     left:24px;
@@ -309,42 +308,9 @@
 
   /* ============ RESPONSIVE ============ */
   @media (min-width:1025px){
-    .hero{
-      min-height:100svh;
-      background:var(--bg);
-    }
-    .hero-inner{min-height:100svh;display:block;}
-    .hero-contact{display:none;}
-    .hero-desktop{
-      position:relative;
-      left:50%;
-      width:100vw;
-      min-height:100svh;
-      transform:translateX(-50%);
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-      align-items:stretch;
-      gap:0;
-      padding:0;
-    }
-    .hero-desktop-media{
-      width:100%;
-      height:100%;
-      min-height:100svh;
-      justify-self:stretch;
-      align-self:stretch;
-      overflow:hidden;
-    }
-    .hero-desktop-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 16%;}
-    .hero-desktop-copy{position:relative;align-self:center;max-width:none;padding:0 clamp(44px,6.5vw,112px) 8px clamp(48px,7vw,120px);}
-    .hero-desktop-copy::before{content:"";display:block;width:54px;height:2px;background:var(--green);margin-bottom:26px;}
-    .hero-desktop-copy .eyebrow{display:block;margin-bottom:20px;color:var(--gold);letter-spacing:.18em;}
-    .hero-desktop-copy h1{font-size:clamp(48px,5.2vw,78px);line-height:1.02;letter-spacing:-.02em;margin:0 0 28px;}
-    .hero-desktop-copy h1 em{font-style:italic;font-weight:400;color:var(--green);}
-    .hero-desktop-copy .lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:510px;margin-bottom:38px;}
-    .hero-desktop-actions{display:flex;align-items:center;gap:16px;}
-    .hero-desktop-actions .btn{padding:16px 30px;letter-spacing:.12em;}
-    .hero-desktop-actions .btn-solid{min-width:210px;font-size:13px;box-shadow:0 8px 18px rgba(31,68,51,.14);}
+    .hero{background-position:center 15%;}
+    .hero-contact{left:auto;right:0;bottom:56px;}
+    .hero-contact .btn-solid{min-width:210px;font-size:13px;}
   }
   @media (max-width:1024px){
     header{padding:8px 16px;}
@@ -410,18 +376,6 @@
   <section class="hero" aria-label="Capa de apresentação de Júlia Ágata de Assis">
     <div class="wrap">
       <div class="hero-inner">
-        <div class="hero-desktop">
-          <div class="hero-desktop-media"><img src="images/portrait-desktop.webp" decoding="async" fetchpriority="high" alt="Júlia Ágata de Assis"></div>
-          <div class="hero-desktop-copy">
-            <span class="eyebrow">Web Designer · Desenvolvedora de Sites</span>
-            <h1>Presença digital com <em>padrão premium.</em></h1>
-            <p class="lead">Criação de sites profissionais e modernos para elevar a autoridade da sua marca no ambiente digital.</p>
-            <div class="hero-desktop-actions">
-              <a class="btn btn-solid" href="https://wa.me/5534988086470" target="_blank">Entrar em contato</a>
-              <a class="btn btn-line" href="#sites">Ver portfólio</a>
-            </div>
-          </div>
-        </div>
         <div class="hero-contact">
           <a class="btn btn-solid" href="https://wa.me/5534988086470" target="_blank">Entrar em contato</a>
         </div>
