@@ -337,6 +337,23 @@
   .service-card h3{font-size:21px;margin-bottom:12px;}
   .service-card p{font-size:14px;color:var(--muted);margin-bottom:20px;}
   .service-card a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);border-bottom:1px solid var(--green);padding-bottom:3px;}
+  /* ============ PROCESSO & PRAZO ============ */
+  .process{padding:100px 0;background:var(--bg);}
+  .process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:48px;}
+  .process-step{border:1px solid var(--line);background:var(--panel);padding:36px 30px;position:relative;overflow:hidden;transition:all .3s var(--ease);}
+  .process-step::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);}
+  .process-step:hover::before{transform:scaleX(1);}
+  .process-step:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(28,26,22,.1);}
+  .process-num{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+  .process-num::before{content:'';width:16px;height:1px;background:var(--gold);}
+  .process-step h3{font-size:20px;margin-bottom:12px;}
+  .process-step p{font-size:14px;color:var(--muted);line-height:1.7;}
+  .process-prazo{display:inline-flex;align-items:center;gap:10px;margin-top:44px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:12px 24px;border-radius:999px;}
+  .process-hosting{margin-top:28px;border:1px solid var(--line);background:var(--panel);padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+  .process-hosting .option h4{font-size:17px;margin-bottom:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .process-hosting .option h4 .free{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--bg);background:var(--green);padding:4px 10px;border-radius:999px;}
+  .process-hosting .option h4 .plus{font-family:var(--mono);font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:4px 10px;border-radius:999px;}
+  .process-hosting .option p{font-size:14px;color:var(--muted);line-height:1.7;}
 
   /* ============ CONTATO ============ */
   .contact{padding:120px 0;background:var(--green-deep);color:#fff;text-align:center;}
@@ -613,10 +630,57 @@
     </div>
   </div>
 
+  <!-- ===== PROCESSO & PRAZO ===== -->
+  <section class="process" id="processo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">07 — Processo</span>
+          <h2>Do briefing à entrega</h2>
+        </div>
+      </div>
+      <div class="process-grid reveal">
+        <div class="process-step">
+          <span class="process-num">Etapa 01</span>
+          <h3>Formulário de briefing</h3>
+          <p>Após fecharmos o negócio, envio um formulário para você preencher com as informações do seu negócio — é a partir dele que o projeto ganha forma.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">Etapa 02</span>
+          <h3>Criação do projeto</h3>
+          <p>Com o formulário preenchido, crio o seu projeto do zero, com identidade própria e atenção total aos detalhes.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">Etapa 03</span>
+          <h3>Sua aprovação</h3>
+          <p>Se você gostar 100% do projeto, ele já é entregue pronto para o ar — sem burocracia e sem intermediários.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">Etapa 04</span>
+          <h3>Ajustes e entrega final</h3>
+          <p>Quer mudar algo no projeto? Faço as alterações necessárias e entrego o site pronto em até 1 semana.</p>
+        </div>
+      </div>
+      <div class="process-hosting reveal">
+        <div class="option">
+          <h4>Hospedagem + domínio gratuitos <span class="free">Cortesia</span></h4>
+          <p>Publico o seu site com hospedagem e domínio gratuitos pela minha organização Site-OFC no GitHub — sem custo adicional.</p>
+        </div>
+        <div class="option">
+          <h4>Domínio próprio <span class="plus">+ R$ 350,00</span></h4>
+          <p>Prefere um endereço exclusivo? Registro um domínio próprio, válido por 3 anos, por R$ 350,00 a mais no valor do site.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="process-prazo">Site pronto em até 1 semana após a aprovação</span>
+      </div>
+    </div>
+  </section>
+
   <section class="pricing" id="precos">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">07 — Investimento</span>
+        <span class="eyebrow">08 — Investimento</span>
         <h2>Tabela de preços</h2>
       </div>
       <div class="price-grid reveal">
@@ -673,7 +737,7 @@
   <!-- ===== CONTATO ===== -->
   <section class="contact" id="contato">
     <div class="wrap reveal">
-      <span class="eyebrow" style="justify-content:center;">08 — Contato</span>
+      <span class="eyebrow" style="justify-content:center;">09 — Contato</span>
       <h2>Vamos tirar o seu projeto do papel?</h2>
       <p>Me chame no WhatsApp e receba uma proposta personalizada para o seu negócio — normalmente respondo em poucos minutos.</p>
       <a class="btn btn-solid" href="https://wa.me/5534988086470" target="_blank">Entrar em contato pelo WhatsApp</a>
