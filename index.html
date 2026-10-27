@@ -58,8 +58,10 @@
     gap:12px;
   }
   .eyebrow::before{content:""; width:20px;height:1px; background:var(--gold);}
+  ::selection{background:var(--green);color:#fff;}
 
   h1,h2,h3,h4{font-family:var(--serif); font-weight:500; color:var(--ink);}
+  .section-head h2, .about-label h2{font-size:clamp(28px,3.5vw,40px);letter-spacing:-.01em;}
 
   /* ============ HEADER ============ */
   header{
@@ -84,7 +86,10 @@
   nav.primary-nav ul{display:flex;gap:24px;}
   nav.primary-nav a{
     font-size:12px;letter-spacing:.05em;text-transform:uppercase;font-family:var(--mono);
+    position:relative;
   }
+  nav.primary-nav a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease);}
+  nav.primary-nav a:hover::after{width:100%;}
   .nav-cta{
     border:1px solid var(--ink); padding:8px 18px;
     font-size:11px;text-transform:uppercase;font-family:var(--mono);
@@ -124,7 +129,8 @@
     z-index:2;
   }
   .btn{padding:14px 28px; font-size:12px; font-family:var(--mono); text-transform:uppercase; transition:all .3s;}
-  .btn-solid{background:var(--green);color:#fff;}
+  .btn-solid{background:var(--green);color:#fff;transition:background .3s;}
+  .btn-solid:hover{background:var(--green-deep);}
   .btn-line{border:1px solid var(--ink);}
   .hero-contact .btn-solid{
     display:inline-flex;
@@ -193,6 +199,7 @@
   .price-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:1px;background:var(--line);}
   .price-card{background:var(--panel);padding:40px 32px;}
   .price-card h3{font-size:22px; margin-bottom:16px;}
+  .price-card h3 em{color:var(--gold);}
   .price-row{padding:16px 0;border-top:1px solid var(--line-soft);}
   .price-row:first-of-type{border-top:none;}
   .price-row .row-head{display:flex;justify-content:space-between;font-family:var(--serif);font-size:17px; align-items: baseline; gap: 10px;}
@@ -299,14 +306,18 @@
   /* ============ FOOTER ============ */
   /* ============ STATS ============ */
   .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
-  .stat{padding:26px 24px;border:1px solid var(--line);background:var(--panel);}
+  .stat{padding:26px 24px;border:1px solid var(--line);background:var(--panel);position:relative;overflow:hidden;}
   .stat .num{font-family:var(--serif);font-size:32px;color:var(--green);line-height:1.1;}
   .stat .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);margin-top:8px;}
+  .stat::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .5s var(--ease);}
+  .stat:hover::after{width:100%;}
 
   /* ============ DEPOIMENTOS ============ */
   .testimonials{padding:100px 0;background:var(--bg-alt);}
   .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px;}
-  .testi-card{background:var(--panel);border:1px solid var(--line);padding:36px 32px;transition:all .3s var(--ease);}
+  .testi-card{background:var(--panel);border:1px solid var(--line);padding:36px 32px;transition:all .3s var(--ease);position:relative;overflow:hidden;}
+  .testi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);}
+  .testi-card:hover::before{transform:scaleX(1);}
   .testi-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(28,26,22,.1);}
   .testi-card .quote{font-family:var(--serif);font-size:44px;line-height:.6;color:var(--gold);display:block;margin-bottom:18px;}
   .testi-card p{font-size:15px;color:var(--muted);margin-bottom:26px;}
@@ -316,7 +327,9 @@
   /* ============ SERVIÇOS ============ */
   .services{padding:100px 0;}
   .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px;}
-  .service-card{border:1px solid var(--line);background:var(--panel);padding:36px 30px;transition:all .3s var(--ease);}
+  .service-card{border:1px solid var(--line);background:var(--panel);padding:36px 30px;transition:all .3s var(--ease);position:relative;overflow:hidden;}
+  .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);}
+  .service-card:hover::before{transform:scaleX(1);}
   .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(28,26,22,.1);}
   .service-card .tag{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
   .service-card .tag::before{content:'';width:16px;height:1px;background:var(--gold);}
@@ -330,6 +343,7 @@
   .contact p{color:rgba(255,255,255,.78);max-width:540px;margin:0 auto 36px;font-size:16px;}
   .contact .btn-solid{background:#fff;color:var(--green-deep);display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:999px;font-size:13px;letter-spacing:.12em;transition:all .3s;}
   .contact .btn-solid:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.3);}
+  .contact h2::after{content:'';display:block;width:56px;height:1px;background:var(--gold);margin:28px auto 0;}
 
   /* ============ CARD ENGAJAMENTO ============ */
   .price-card.engajamento{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:14px;background:var(--green);color:#fff;}
@@ -341,6 +355,8 @@
   footer{padding:60px 0;background:var(--bg);border-top:1px solid var(--line); text-align:center;}
   .footer-links{display:flex;justify-content:center;gap:24px;margin:24px 0;}
   .footer-links a{font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--muted);}
+  .footer-links a{transition:color .3s;}
+  .footer-links a:hover{color:var(--gold);}
   .footer-note{font-size:12px;color:var(--muted-2);}
 
   /* ============ REVEAL ============ */
