@@ -15,6 +15,7 @@
   gtag('js', new Date());
   gtag('config', 'AW-18490439152');
 </script>
+<script defer src="contact-conversion.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
@@ -914,17 +915,6 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       img.addEventListener('load', () => img.classList.add('loaded'));
     }
-  });
-
-  // Conversão: só conta quando a pessoa clica em um botão/link de contato WhatsApp.
-  document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
-    link.addEventListener('click', function() {
-      gtag('event', 'conversion', {
-        send_to: 'AW-18490439152/dqopCI6rsqsdEPDr9vBE',
-        event_category: 'lead',
-        event_label: 'portfolio_whatsapp_contact_click'
-      });
-    });
   });
 });
 </script>
