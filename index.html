@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="preload" as="image" href="images/portrait-mobile.webp">
+<link rel="preload" as="image" href="images/cover-desktop.webp" media="(min-width:1025px)">
 <title>Júlia Ágata de Assis — Web Designer & Desenvolvedora de Sites</title>
 <meta name="description" content="Criação de sites profissionais com design sofisticado e foco em conversão. Mais de 35 sites publicados — landing pages, sites institucionais e lojas virtuais. Peça sua proposta pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -353,7 +354,7 @@
 
   /* ============ FOOTER ============ */
   footer{padding:60px 0;background:var(--bg);border-top:1px solid var(--line); text-align:center;}
-  .footer-links{display:flex;justify-content:center;gap:24px;margin:24px 0;}
+  .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 24px;margin:24px 0;padding:0 16px;}
   .footer-links a{font-family:var(--mono);font-size:12px;text-transform:uppercase;color:var(--muted);}
   .footer-links a{transition:color .3s;}
   .footer-links a:hover{color:var(--gold);}
@@ -396,6 +397,9 @@
     .hero{background-position:center top;}
     .hero-contact{left:50%;bottom:28px;transform:translateX(-50%);white-space:nowrap;}
     .hero-contact .btn-solid{padding:14px 26px;font-size:11px;}
+    .footer-links{gap:10px 18px;margin:20px 0;padding:0 12px;}
+    .footer-links a{font-size:11px;letter-spacing:.02em;}
+    .footer-note{padding:0 16px;}
   }
 </style>
 </head>
@@ -564,7 +568,7 @@
         <div class="cert-card reveal" onclick="openCertModal()">
           <div class="cert-badge">680 h</div>
           <div class="cert-thumb">
-            <img src="images/certificado-proz-dev-web.png" loading="lazy" decoding="async" alt="Certificado Desenvolvimento Web com Implantação de Projeto — Proz">
+            <img src="images/certificado-proz-dev-web.webp" loading="lazy" decoding="async" alt="Certificado Desenvolvimento Web com Implantação de Projeto — Proz">
             <div class="cert-overlay"><span>Ver certificado</span></div>
           </div>
           <div class="cert-body">
@@ -599,8 +603,8 @@
         <button class="cert-modal-close" onclick="closeCertModal()" aria-label="Fechar">&#215;</button>
       </div>
       <div class="cert-modal-body">
-        <img class="cert-modal-img" src="images/certificado-proz-dev-web.png" loading="lazy" decoding="async" alt="Certificado — página 1">
-        <img class="cert-modal-img" src="images/certificado-proz-dev-web-p2.png" loading="lazy" decoding="async" alt="Certificado — página 2">
+        <img class="cert-modal-img" src="images/certificado-proz-dev-web.webp" loading="lazy" decoding="async" alt="Certificado — página 1">
+        <img class="cert-modal-img" src="images/certificado-proz-dev-web-p2.webp" loading="lazy" decoding="async" alt="Certificado — página 2">
         <div class="cert-modal-actions">
           <a class="btn btn-solid" href="certificado-desenvolvimento-web.pdf" download="Certificado_Julia_Assis_Desenvolvimento_Web.pdf">Baixar PDF</a>
           <a class="btn btn-line" href="certificado-desenvolvimento-web.pdf" target="_blank">Abrir em nova aba</a>
@@ -732,29 +736,29 @@ const sites = [
 ];
 
 const gallery = [
-  ["images/Designs.PNG"],
-  ["images/Maximalismo.PNG"],
-  ["images/GOLDEN HOUR.PNG"],
-  ["images/Designs 2.PNG"],
-  ["images/Feliz.PNG"],
-  ["images/Blue Illustrative Technology Innovation Poster (Post para Instagram (45)).PNG"],
-  ["images/Personalizados.PNG"],
-  ["images/IMG_3205.JPG"],
-  ["images/IMG_3206.JPG"],
-  ["images/Edições personalizadas.jpg"],
-  ["images/Crio ensaios fotográficos e edições personalizadas para você !.jpg"],
+  ["images/Designs.webp"],
+  ["images/Maximalismo.webp"],
+  ["images/GOLDEN HOUR.webp"],
+  ["images/Designs 2.webp"],
+  ["images/Feliz.webp"],
+  ["images/Blue Illustrative Technology Innovation Poster (Post para Instagram (45)).webp"],
+  ["images/Personalizados.webp"],
+  ["images/IMG_3205.webp"],
+  ["images/IMG_3206.webp"],
+  ["images/Edições personalizadas.webp"],
+  ["images/Crio ensaios fotográficos e edições personalizadas para você !.webp"],
 ];
 
 function render() {
   const st = document.getElementById('sitesTrack'), dt = document.getElementById('designsTrack');
-  sites.forEach(s => {
+  sites.forEach((s, i) => {
     const c = document.createElement('div'); c.className = 'site-card';
-    c.innerHTML = `<a href="${s[2]}" target="_blank" class="site-card-link"></a><div class="site-thumb"><img src="${s[3]}" loading="lazy" decoding="async" fetchpriority="high"></div><div class="site-info"><h4>${s[0]}</h4><a class="visit" href="${s[2]}" target="_blank">Visitar</a></div>`;
+    c.innerHTML = `<a href="${s[2]}" target="_blank" class="site-card-link"></a><div class="site-thumb"><img src="${s[3]}" ${i < 4 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async"></div><div class="site-info"><h4>${s[0]}</h4><a class="visit" href="${s[2]}" target="_blank">Visitar</a></div>`;
     st.appendChild(c);
   });
   gallery.forEach(g => {
     const c = document.createElement('div'); c.className = 'design-card';
-    c.innerHTML = `<img src="${g[0]}" loading="lazy" decoding="async" fetchpriority="low">`;
+    c.innerHTML = `<img src="${g[0]}" loading="lazy" decoding="async" loading="lazy">`;
     dt.appendChild(c);
   });
 }
